@@ -1,16 +1,13 @@
 'use strict';
 const {
-  Model, UUID, UUIDV4
-} = require('sequelize');
+  Model, UUIDV4
+} = require('sequelize'); 
 module.exports = (sequelize, DataTypes) => {
   class Task extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      Task.belongsTo(User)
+      const User = sequelize.define('user');
+      const Task = sequelize.define('task')
+      Task.belongsTo(User, {as: 'user'});
     }
   };
   Task.init({
@@ -35,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'task',
     freezeTableName: true,
     underscored: true,
-    timestamps: false,S
+    timestamps: false,
   });
   return Task;
 };

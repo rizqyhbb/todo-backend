@@ -5,6 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
+      const User = sequelize.define('user');
+      const Task = sequelize.define('task')
       User.hasMany(Task,{as: 'task', foreignKey: 'id_task'})
     }
   };
