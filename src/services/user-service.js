@@ -46,7 +46,6 @@ class UserService {
         const findUser = await user.findOne({
             where: {email},
         })
-        console.log(findUser)
         if(!findUser){
             throw new Error(ERRORS.EMAIL_NOT_FOUND)
         }

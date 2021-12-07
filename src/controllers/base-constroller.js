@@ -23,6 +23,18 @@ class BaseController {
                 code: 400,
                 message: 'Wrong Email Or Password'
             }
+            case ERRORS.UNAUTHORIZED: return {
+                code: 401,
+                message: 'Unauthorized'
+            }
+            case ERRORS.FORBIDDEN: return {
+                code: 403,
+                message: 'Forbidden'
+            }
+            case ERRORS.INTERNAL_SERVER_ERROR: return {
+                code: 500,
+                message: 'Internal Server Error'
+            }
         }
     }
 }
