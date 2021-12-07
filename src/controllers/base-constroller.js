@@ -15,6 +15,14 @@ class BaseController {
                 code: 400, 
                 message: 'Bad Request'
             }
+            case ERRORS.EMAIL_NOT_FOUND: return {
+                code: 400,
+                message: 'Email Not Found'
+            }
+            case ERRORS.WRONG_EMAIL_OR_PASSWORD: return {
+                code: 400,
+                message: 'Wrong Email Or Password'
+            }
         }
     }
 }

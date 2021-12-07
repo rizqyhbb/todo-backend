@@ -40,6 +40,22 @@ class UserController extends BaseController{
             
         }
     }
+
+    static login = async (req, res) => {
+        try {
+            const { email, password } = req.body;
+            const authentication = await UserService.authentication({email, password});
+            return res.status(200).json({
+                message: 'You are loged in!',
+                token: authentication
+            })
+        } catch (err) {
+            console.log(err);
+            const error = this.getError(err);
+            return res.status(error.code).json(error.message)   
+        }
+
+    }
 }
 
 export default UserController;
