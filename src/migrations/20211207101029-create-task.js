@@ -14,10 +14,14 @@ module.exports = {
         defaultValue: Sequelize.UUIDV4,
         references: {model: 'user', key: 'id_user'}
       },
-      task: {
+      todo: {
         type: Sequelize.STRING,
         allowNull: false
       },
+      status: {
+        type: Sequelize.STRING,
+        defaultValue: 'incomplete'
+      }
     });
   },
   down: async (queryInterface, Sequelize) => {

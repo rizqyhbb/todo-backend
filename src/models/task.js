@@ -23,10 +23,14 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4,
       references: {model: 'user', key: 'id_user'}
     },
-    task: {
+    todo: {
       type: DataTypes.STRING,
       allowNull: false
     },
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: 'incomplete'
+    }
   }, {
     sequelize,
     modelName: 'task',
