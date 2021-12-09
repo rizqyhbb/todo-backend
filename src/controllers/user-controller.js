@@ -30,7 +30,7 @@ class UserController extends BaseController{
                 last_name});
             return res.status(200).json({
                 message: 'Account registered',
-                register
+                email: register.email
             })
             
         } catch (err) {

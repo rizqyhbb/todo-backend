@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       const Task = sequelize.define('task')
       Task.belongsTo(User, {as: 'user'});
     }
-  };
+  }
   Task.init({
     id_task: {
       type: DataTypes.UUID,

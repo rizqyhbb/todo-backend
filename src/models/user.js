@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       const Task = sequelize.define('task')
       User.hasMany(Task,{as: 'task', foreignKey: 'id_task'})
     }
-  };
+  }
   User.init({
     id_user: {
       type: DataTypes.UUID,
