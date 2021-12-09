@@ -35,13 +35,32 @@ class TaskController extends BaseController {
     static deleteTask = async ( req, res ) => {
         try {
             const { id_task } = req.params
-            const destroyTask = TaskService.deleteTask({id_task});
+            TaskService.deleteTask({id_task});
             return res.status(200).json({
                message:"Task Deleted!" 
             })
             
         } catch (err) {
             console.log(err)
+            const error = this.getError(err);
+            return res.status(error.code).json(error.message)
+            
+        }
+    }
+
+    static updateTask = async ( req, res ) => {
+        try {
+            const { id_task } = req.params
+            const { todo, status } = req.body
+            const updatedTask = await TaskService.updateTask(todo, status, id_task);
+            return res.status(200).json({
+                message: "Task Updated!",
+                todo: updatedTask[1].map(({ todo })=> todo),
+                status: updatedTask[1].map(({ status })=> status),
+            })
+            
+        } catch (err) {
+            console.log(err);
             const error = this.getError(err);
             return res.status(error.code).json(error.message)
             

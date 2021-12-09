@@ -16,6 +16,7 @@ router.use(authentication)
 router.get(ROUTES.ALL_TASK, TaskController.getTaskbyId)
 router.post(ROUTES.ALL_TASK, TaskController.addTask)
 router.delete(ROUTES.TASK_BY_ID, [authorization], TaskController.deleteTask)
+router.patch(ROUTES.TASK_BY_ID, [authorization], TaskController.updateTask)
 
 
 export default router;

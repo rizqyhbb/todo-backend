@@ -25,7 +25,6 @@ class TaskService {
                 id_user,
                 todo
             });
-            console.log("THIS IS CREATE TASK",createTask)
             return createTask;
     }
 
@@ -38,6 +37,16 @@ class TaskService {
             console.log(err)
             throw new Error(ERRORS.INTERNAL_SERVER_ERROR)
         }
+    }
+
+    static updateTask = async (todo, status, id_task) => {
+        
+            if(!todo){
+                throw new Error(ERRORS.BAD_REQUEST)
+            }
+            const updatedTask = await task.update({todo, status}, {where: {id_task}, returning: true})
+            return updatedTask
+        
     }
 }
 
