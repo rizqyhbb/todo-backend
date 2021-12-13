@@ -56,9 +56,18 @@ class UserService {
         }
         const token = jwt.sign({
             id_user: findUser.id_user,
-            email: findUser.email            
+            email: findUser.email,
+            first_name: findUser.first_name,
+            last_name: findUser.last_name            
         },process.env.SECRET_KEY)
-        return token;
+        const decode = jwt.verify(token, process.env.SECRET_KEY, (err, decode) => {
+            console.log(err)
+            if(err){
+                return res.status(403).json(ERRORS.FORBIDDEN)
+            }
+            return decode
+        })
+        return {token, decode}
     }
 }
 

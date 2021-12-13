@@ -47,7 +47,7 @@ class UserController extends BaseController{
             const authentication = await UserService.authentication({email, password});
             return res.status(200).json({
                 message: 'You are loged in!',
-                token: authentication
+                ...authentication
             })
         } catch (err) {
             console.log(err);

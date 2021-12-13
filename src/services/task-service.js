@@ -6,12 +6,11 @@ class TaskService {
         try {
             const taskbyId = await task.findAll({
                     where: { id_user: id },
-                    attributes: ['todo']
+                    attributes: ['todo', 'id_task', 'status']
                 })
-                return taskbyId.map((list) => {
-                    return list.todo
-                })
-        } catch (err) {
+                return taskbyId
+                }
+        catch (err) {
             console.log(err)
             throw new Error(ERRORS.INTERNAL_SERVER_ERROR)
         }    
