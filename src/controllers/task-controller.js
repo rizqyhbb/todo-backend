@@ -35,7 +35,7 @@ class TaskController extends BaseController {
     static deleteTask = async ( req, res ) => {
         try {
             const { id_task } = req.params
-            TaskService.deleteTask({id_task});
+            await TaskService.deleteTask({id_task});
             return res.status(200).json({
                message:"Task Deleted!" 
             })
