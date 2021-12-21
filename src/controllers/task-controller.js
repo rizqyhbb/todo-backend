@@ -51,12 +51,12 @@ class TaskController extends BaseController {
     static updateTask = async ( req, res ) => {
         try {
             const { id_task } = req.params
-            const { todo, status } = req.body
-            const updatedTask = await TaskService.updateTask(todo, status, id_task);
+            const { todo, complete } = req.body
+            const updatedTask = await TaskService.updateTask(todo, complete, id_task);
             return res.status(200).json({
                 message: "Task Updated!",
                 todo: updatedTask[1].map(({ todo })=> todo),
-                status: updatedTask[1].map(({ status })=> status),
+                complete: updatedTask[1].map(({ complete })=> complete),
             })
             
         } catch (err) {

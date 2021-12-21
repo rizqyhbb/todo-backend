@@ -27,9 +27,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    status: {
-      type: DataTypes.STRING,
-      defaultValue: 'incomplete'
+    complete: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   }, {
     sequelize,
