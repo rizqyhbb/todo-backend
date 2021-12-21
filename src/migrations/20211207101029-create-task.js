@@ -18,9 +18,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      status: {
-        type: Sequelize.STRING,
-        defaultValue: 'incomplete'
+      complete: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       }
     });
   },

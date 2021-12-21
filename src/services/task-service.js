@@ -6,7 +6,7 @@ class TaskService {
         try {
             const taskbyId = await task.findAll({
                     where: { id_user: id },
-                    attributes: ['todo', 'id_task', 'status']
+                    attributes: ['todo', 'id_task', 'complete']
                 })
                 return taskbyId
                 }
@@ -38,12 +38,9 @@ class TaskService {
         }
     }
 
-    static updateTask = async (todo, status, id_task) => {
+    static updateTask = async (todo, complete, id_task) => {
         
-            if(!todo){
-                throw new Error(ERRORS.BAD_REQUEST)
-            }
-            const updatedTask = await task.update({todo, status}, {where: {id_task}, returning: true})
+            const updatedTask = await task.update({todo, complete}, {where: {id_task}, returning: true})
             return updatedTask
         
     }
