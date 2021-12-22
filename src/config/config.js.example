@@ -1,0 +1,26 @@
+export default {
+  "development": {
+    "username": process.env.DB_USERNAME,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
+    "dialect": process.env.DIALECT,
+    "port": process.env.PORT
+  },
+  "test": {
+    "username": process.env.DB_USERNAME,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
+    "dialect": process.env.DIALECT,
+    "port": process.env.PORT
+  },
+  "production": {
+    "username": process.env.DB_USERNAME,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
+    "dialect": process.env.DIALECT,
+    "port": process.env.PORT
+  }
+}
