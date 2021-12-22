@@ -2,18 +2,6 @@ import UserService from "../services/user-service";
 import BaseController from "./base-constroller";
 
 class UserController extends BaseController{
-    static getAllUser = async (req, res) => {
-        try {
-            const users = await UserService.getAllUser();
-            res.status(200).json(users)
-
-        } catch (err) {
-            console.log(err);
-            const error = this.getError(err);
-            return res.status(error.code).json(error.message)
-        }
-    }
-
     static register = async (req, res) => {
         try {
             const {

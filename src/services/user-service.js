@@ -4,11 +4,6 @@ import { compareHash, generateHash } from '../utils/encryption'
 import jwt from 'jsonwebtoken'
 
 class UserService {
-    static getAllUser = async () => {
-        const users = await user.findAll()
-        return users
-    }
-
     static register = async ({
         email, 
         password, 

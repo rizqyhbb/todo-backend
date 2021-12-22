@@ -5,7 +5,6 @@ const ROUTE_PARAMS = {
 
 const ROUTES = {
     ROOT: '/',
-    ALL_USER: '/users',
     REGISTER: '/register',
     LOG_IN: '/login',
     ALL_TASK: '/task',
