@@ -22,14 +22,14 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.12.0-beta.1"
+    "sequelize": "^6.12.0-beta.1",
+    "@babel/cli": "^7.16.0"
   },
   "volta": {
     "node": "14.18.2",
     "yarn": "1.22.17"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/node": "^7.16.0",
     "@babel/preset-env": "^7.16.4"
