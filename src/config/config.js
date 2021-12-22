@@ -18,6 +18,7 @@ module.exports = {
     port: process.env.DB_PORT
   },
   "production": {
-    "use_env_variable": process.env.DATABASE_URL
+    use_env_variable:"postgres://pqnrvqxaqufded:75aedd95a08446f3dfdfb92f2d1371d8dc8eab751e359511613da37bd8590875@ec2-3-91-135-72.compute-1.amazonaws.com:5432/d3t01n1nnpcq58"
+
   }
 }
