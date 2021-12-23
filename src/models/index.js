@@ -9,26 +9,9 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-// if(process.env.DATABASE_URL) {
-//   sequelize = new Sequelize(process.env[config.use_env_variable], {
-//     dialect: "postgres",
-//     protocol: null,
-//     ssl: true,
-//     dialectOption: {
-//       ssl: {
-//         require: true,
-//         rejectUnauthorized: false
-//       }
-//     }
-//   });
-// } else {
-//   sequelize = new Sequelize(config.database, config.username, config.password, config);
-// }
 if (config.use_env_variable) {
   sequelize = new Sequelize(config.use_env_variable, null, null, {
-    dialect: 'postgres',
-    host: '127.0.0.1',
-    port: 5432
+    dialect: 'postgres'
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
