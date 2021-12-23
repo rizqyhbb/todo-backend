@@ -2,6 +2,7 @@ import { user } from '../models'
 import ERRORS from '../config/errors'
 import { compareHash, generateHash } from '../utils/encryption'
 import jwt from 'jsonwebtoken'
+import 'regenerator-runtime/runtime';
 
 class UserService {
     static register = async ({

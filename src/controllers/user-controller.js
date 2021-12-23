@@ -1,5 +1,6 @@
 import UserService from "../services/user-service";
 import BaseController from "./base-constroller";
+import 'regenerator-runtime/runtime';
 
 class UserController extends BaseController{
     static register = async (req, res) => {

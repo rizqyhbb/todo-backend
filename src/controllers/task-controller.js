@@ -1,5 +1,6 @@
 import TaskService from "../services/task-service";
 import BaseController from "./base-constroller";
+import 'regenerator-runtime/runtime';
 
 
 class TaskController extends BaseController {

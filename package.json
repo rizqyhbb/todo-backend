@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.16.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -22,8 +23,8 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.12.0-beta.1",
-    "@babel/cli": "^7.16.0"
+    "regenerator-runtime": "^0.13.9",
+    "sequelize": "^6.12.0-beta.1"
   },
   "volta": {
     "node": "14.18.2",

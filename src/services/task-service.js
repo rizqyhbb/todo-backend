@@ -1,5 +1,6 @@
 import ERRORS from "../config/errors";
 import { task } from "../models";
+import 'regenerator-runtime/runtime';
 
 class TaskService {
     static getTaskbyId = async (id) => {

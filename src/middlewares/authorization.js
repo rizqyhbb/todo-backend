@@ -1,5 +1,6 @@
 import ERRORS from "../config/errors"
 import {task} from '../models'
+import 'regenerator-runtime/runtime';
 
 const authorization = async ( req, res, next ) => {
     try {

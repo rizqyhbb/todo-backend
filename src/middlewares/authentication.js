@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import ERRORS from "../config/errors"
+import 'regenerator-runtime/runtime'
 
 const authentication = async (req, res, next) => {
     try {
