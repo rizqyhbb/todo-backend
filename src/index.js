@@ -5,7 +5,7 @@ import cors from 'cors'
 const app = express()
 require('dotenv').config()
 
-app.use(cors({origin: 'http://localhost:3001'} ))
+app.use(cors({origin: 'http://localhost:3000'} ))
 app.use(express.json());
 app.use('/api', apis)
 
