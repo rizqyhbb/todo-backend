@@ -23,8 +23,9 @@ module.exports = {
   production: {
     use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
+    username: 'DB_PRODUCTION_USER',
+    password: 'DB_PRODUCTION_PASSWORD',
     protocol: null,
-    port: 5432,
     dialectOptions: {
       ssl: {
         require: true,
