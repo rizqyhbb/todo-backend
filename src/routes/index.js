@@ -7,7 +7,9 @@ import ROUTES from "./apis";
 
 const router = express.Router()
 
-router.get("/",(req,res) => {res.send("WELCOMEE")})
+router.get("/",(req,res) => {
+  console.log("eheuhueh")
+  res.json({message: "WELCOMEE"})})
 router.post(ROUTES.REGISTER,UserController.register);
 router.post(ROUTES.LOG_IN,UserController.login);
 
