@@ -27,7 +27,8 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(config.use_env_variable, null, null, {
     dialect: 'postgres',
-    host: '127.0.0.1'
+    host: '127.0.0.1',
+    port: 5432
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
