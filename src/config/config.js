@@ -18,7 +18,7 @@ module.exports = {
     port: process.env.DB_PORT
   },
   production: {
-    use_env_variable: 'DATABSE_URL'
+    "use_env_variable": "DATABSE_URL"
   }
   // production: {
   //   use_env_variable: 'DATABASE_URL',
