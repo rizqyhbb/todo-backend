@@ -9,6 +9,5 @@ app.use(cors())
 app.use(express.json());
 app.use('/api', apis)
 
-app.listen(process.env.APP_PORT, () => {
-console.log(`Server runing on port ${process.env.APP_PORT}`)
-})
+app.listen(process.env.PORT, () => {
+console.log(`Server runing on port ${process.env.PORT}`)});
