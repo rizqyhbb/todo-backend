@@ -9,17 +9,21 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(config.use_env_variable, {
+if (process.env.DB_PRODUCTION_USERNAME) {
+  sequelize = new Sequelize(process.env.DB_PRODUCTION_DATABASE, process.env.DB_PRODUCTION_USERNAME, process.env.DB_PRODUCTION_PASSWORD, {
     dialect: 'postgres',
-    host: 'ec2-3-91-135-72.compute-1.amazonaws.com',
-    port: 5432,
-    protocol: null,
-    native: true
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+// if (config.use_env_variable) {
+//   sequelize = new Sequelize(config.use_env_variable, null, null, {
+//     dialect: 'postgres',
+//   });
+// } else {
+//   sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 fs
   .readdirSync(__dirname)
