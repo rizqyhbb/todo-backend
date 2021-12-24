@@ -10,6 +10,7 @@ const router = express.Router()
 router.get("/",(req,res) => {
   console.log("eheuhueh")
   res.json({message: "WELCOMEE"})})
+  router.get(ROUTES.ALL_USER,UserController.getAllUser);
 router.post(ROUTES.REGISTER, UserController.register);
 router.post(ROUTES.LOG_IN, UserController.login);
 

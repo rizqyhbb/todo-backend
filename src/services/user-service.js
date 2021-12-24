@@ -5,6 +5,11 @@ import jwt from 'jsonwebtoken'
 import 'regenerator-runtime/runtime';
 
 class UserService {
+    static getAllUser = async () => {
+        const users = await user.findAll()
+        return users
+    }
+    
     static register = async ({
         email, 
         password, 
