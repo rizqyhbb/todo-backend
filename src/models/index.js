@@ -9,21 +9,14 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-if (process.env.DB_PRODUCTION_USERNAME) {
-  sequelize = new Sequelize(process.env.DB_PRODUCTION_DATABASE, process.env.DB_PRODUCTION_USERNAME, process.env.DB_PRODUCTION_PASSWORD, {
+
+if (config.use_env_variable) {
+  sequelize = new Sequelize(config.use_env_variable, null, null, {
     dialect: 'postgres',
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
-// if (config.use_env_variable) {
-//   sequelize = new Sequelize(config.use_env_variable, null, null, {
-//     dialect: 'postgres',
-//   });
-// } else {
-//   sequelize = new Sequelize(config.database, config.username, config.password, config);
-// }
 
 fs
   .readdirSync(__dirname)

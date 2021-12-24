@@ -18,22 +18,14 @@ module.exports = {
     port: process.env.DB_PORT
   },
   production: {
-    username: process.env.DB_PRODUCTION_USERNAME,
-    password: process.env.DB_PRODUCTION_PASSWORD,
-    database: process.env.DB_PRODUCTION_DATABASE,
-    host: process.env.DB_PRODUCTION_HOST,
+    use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
-    port: process.env.DB_PRODUCTION_PORT
-    // use_env_variable: 'DATABASE_URL',
-    // dialect: 'postgres',
-    // username: 'DB_PRODUCTION_USERNAME',
-    // password: 'DB_PRODUCTION_PASSWORD',
-    // protocol: null,
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false,
-    //   },
-    // },
+    protocol: null,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
 }
