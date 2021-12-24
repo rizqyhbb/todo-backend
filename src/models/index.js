@@ -10,10 +10,12 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(config.use_env_variable, config.username, config.password, {
+  sequelize = new Sequelize(config.use_env_variable, {
     dialect: 'postgres',
     host: 'ec2-3-91-135-72.compute-1.amazonaws.com',
-    port: 5432
+    port: 5432,
+    protocol: null,
+    native: true
   });
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);

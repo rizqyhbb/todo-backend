@@ -22,15 +22,15 @@ module.exports = {
   // }
   production: {
     use_env_variable: 'DATABASE_URL',
-    dialect: 'postgres',
-    username: 'DB_PRODUCTION_USERNAME',
-    password: 'DB_PRODUCTION_PASSWORD',
-    protocol: null,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    // dialect: 'postgres',
+    // username: 'DB_PRODUCTION_USERNAME',
+    // password: 'DB_PRODUCTION_PASSWORD',
+    // protocol: null,
+    // dialectOptions: {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false,
+    //   },
+    // },
   },
 }
