@@ -9,7 +9,7 @@ class UserService {
         const users = await user.findAll()
         return users
     }
-    
+
     static register = async ({
         email, 
         password, 
